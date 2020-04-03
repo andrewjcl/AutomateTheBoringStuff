@@ -92,6 +92,8 @@ while True:
 ###############
 #### Chapter 3 page 74 Zig Zag
 
+import time, sys
+
 def print_row(indent):
     line = ''
 
@@ -109,6 +111,8 @@ backwards = True
 while True:
 
     print(print_row(indent))
+    time.sleep(0.03)  # Pause for 0.01 second
+
 
     if backwards and indent != 0:
         indent -= 1

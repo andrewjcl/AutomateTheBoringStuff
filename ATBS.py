@@ -125,3 +125,26 @@ while True:
         
         
 #######################################
+#### Chapter 3 page 76 Collatz Sequence
+#### With input validation
+
+while True:
+    try:
+        number = int(input('Enter a number '))
+    except ValueError:
+        print('You didn\'t enter a number')
+        continue
+    break
+
+print('The number you entered is:', number)
+
+while number != 1:
+    if number % 2 == 0:
+        number = int(number / 2)
+    else:
+        number = number * 3 + 1
+    print(str(number))
+
+    
+#########################################
+

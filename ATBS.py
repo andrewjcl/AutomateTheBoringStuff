@@ -24,4 +24,70 @@ while guess != number:
 print('Good job! You guessed my number in ' + str(attempts) + ' guesses.')
 
 #################################
+#### Chapter 2 pg 52 Rock, Paper, Scissors
+
+import random
+
+print('Rock, Paper, Scissors')
+wins = 0
+losses = 0 
+ties = 0
+
+while True:
+    print(str(wins) + ' Wins, ' + str(losses) + ' Losses, ' + str(ties) + ' Ties')
+    print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')
+    key = input()
+
+    ai_roll = random.randint(1, 3)
+    ai_move = ''
+
+    if ai_roll == 1:
+        ai_move = 'r'
+    elif ai_roll == 2:
+        ai_move = 'p'
+    else:
+        ai_move = 's'
+
+    # Display player move
+    if key == 'r':
+        print('Rock vs ...')
+    if key == 'p':
+        print('Paper vs ...')
+    if key == 's':
+        print('Scissors vs ...')
+
+    # Display AI move
+    if ai_move == 'r':
+        print('Rock')
+    if ai_move == 'p':
+        print('Paper')
+    if ai_move == 's':
+        print('Scissors')
+
+    # Calculate and display outcome
+    if key == ai_move:
+        print('It is a tie!')
+        ties += 1
+    if key == 'r' and ai_move == 'p':
+        print('You Lose!')
+        losses += 1
+    if key == 'r' and ai_move == 's':
+        print('You Win!')
+        wins += 1
+    if key == 'p' and ai_move == 's':
+        print('You Lose!')
+        losses += 1
+    if key == 'p' and ai_move == 'r':
+        print('You Win!')
+        wins += 1
+    if key == 's' and ai_move == 'r':
+        print('You Lose!')
+        losses += 1
+    if key == 's' and ai_move == 'p':
+        print('You Win!')
+        wins += 1
+    if key == 'q':
+        break
+        
+###############
 

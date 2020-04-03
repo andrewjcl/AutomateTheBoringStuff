@@ -90,4 +90,38 @@ while True:
         break
         
 ###############
+#### Chapter 3 page 74 Zig Zag
 
+def print_row(indent):
+    line = ''
+
+    for _ in range(indent):
+        line += ' '
+    line += '********'
+    return line
+
+
+# Starting Position and direction
+indent = 4
+backwards = True
+
+
+while True:
+
+    print(print_row(indent))
+
+    if backwards and indent != 0:
+        indent -= 1
+    elif indent == 0:
+        indent += 1
+        backwards = False
+    elif not backwards and indent != 4:
+        indent += 1
+    elif indent == 4:
+        indent -= 1
+        backwards = True
+    else:
+        break
+        
+        
+#######################################

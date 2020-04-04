@@ -218,6 +218,75 @@ chess_board = {'1h': 'wking', '8c': 'wbishop', '2g': 'wking'}
 is_valid_chess_board(chess_board)
 
 #########################
+#### Chapter 5 page 127 Fantasy Game Inventory
+def display_inventory(inv_dict):
+    total_items = 0
+    print('Inventory:')
+    for each in inv_dict:
+        total_items += inv_dict[each]
+        print(f'{inv_dict[each]} {each}')
+    print(f'Total number of items: {total_items}')
 
 
+inventory = {'rope': 1,
+             'torch': 6,
+             'gold coin': 42,
+             'dagger': 1,
+             'arrow': 12}
+
+display_inventory(inventory)
+
+###########################
+#### Chapter 5 page 128 Dragon Loot Inventory
+
+def display_inventory(inv_dict):
+    total_items = 0
+    print('Inventory:')
+    for each in inv_dict:
+        total_items += inv_dict[each]
+        print(f'{inv_dict[each]} {each}')
+    print(f'Total number of items: {total_items}')
+
+
+def add_to_inventory(inventory, added_items):
+    for each in added_items:
+        if each in inventory.keys():
+            inventory[each] += 1
+        else:
+            inventory[each] = 1
+
+
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+
+display_inventory(inventory)
+
+dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+add_to_inventory(inventory, dragon_loot)
+
+display_inventory(inventory)
+
+#######################################
+#### Chapter 6 page 147 Copy the Right Phrase - requires pyperclip install
+
+#! python3
+# mclip.py - A multi-line clipboard program
+
+import sys
+import pyperclip
+TEXT = {'agree': """Yes, I agree. That sounds fine to me.""",
+        'busy': """Sorry, can we do this later this week or next week?""",
+        'upsell': """Would you consider making this a monthly donation?"""}
+
+
+if len(sys.argv) < 2:
+    print('Usage: python mclip.py [keyphrase] - copy phrase text')
+    sys.exit()
+
+keyphrase = sys.argv[1]  # First command line arg is the keyphrase
+
+if keyphrase in TEXT:
+    pyperclip.copy(TEXT[keyphrase])
+    print(f'Text for {keyphrase} copied to the clipboard.')
+else:
+    print(f'There is no text for {keyphrase}')
 

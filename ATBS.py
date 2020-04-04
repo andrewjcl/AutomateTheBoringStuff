@@ -191,4 +191,33 @@ print(str(number_of_streaks))
 # flip = random.randint(1, 2)
 # code that checks if there is a streak of 6 heads or tails in a row.
 #######################################
+#### Chapter 5 page 127 Chess Dictionary Validator
+
+def is_valid_chess_board(chess_dictionary):
+
+    king_count = {'wking': 0, 'bking': 0}
+
+    for key in chess_dictionary:
+        # Check Location of pieces
+        print(key, chess_dictionary[key])
+
+        if 0 < int(key[0]) < 9:
+            print(f'{key} is A ok')
+        else:
+            print(f'{key} is invalid location (off board)')
+
+        if chess_dictionary[key] in king_count:
+            king_count[chess_dictionary[key]] += 1
+
+    if king_count['wking'] > 1 or king_count['bking'] > 1:
+        print('ERROR! Too many Kings.')
+
+
+chess_board = {'1h': 'wking', '8c': 'wbishop', '2g': 'wking'}
+
+is_valid_chess_board(chess_board)
+
+#########################
+
+
 

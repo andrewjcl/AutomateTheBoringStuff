@@ -151,4 +151,44 @@ while number != 1:
 
     
 #########################################
+#### Chapter 4 Coin Flip Streaks
+
+import random
+
+number_of_streaks = 0
+current_streak = 1
+experiment = []
+flips
+
+
+for i in range(flips):
+    flip = random.randint(1, 2)
+    if flip == 1:
+        experiment.append('H')
+    else:
+        experiment.append('T')
+    #print('Roll (' + str(i) + ') ----- ' + experiment[i])
+
+    if i > 0:
+        if experiment[i] == experiment[i - 1]:
+            current_streak += 1
+            # print('*****On a streak! #: ' + str(current_streak))
+        else:
+            #print('*****Streak ended (' + str(current_streak) + ')')
+            current_streak = 0
+
+    if current_streak >= 6:
+        #print('Streak reached 6! (' + experiment[i] + ')')
+        number_of_streaks += 1
+
+
+# print(experiment)
+print(str(number_of_streaks))
+
+
+# for experiment_number in range(1000):
+# Code that creates a list of 100 heads or tails values
+# flip = random.randint(1, 2)
+# code that checks if there is a streak of 6 heads or tails in a row.
+#######################################
 

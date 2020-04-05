@@ -290,3 +290,24 @@ if keyphrase in TEXT:
 else:
     print(f'There is no text for {keyphrase}')
 
+####################################
+#### Chapter 6 page 148 Bullet Point Adder - requires pyperclip
+
+#! python3
+# bullet_adder.py - Adds wikipedia bullets to the start
+#                   of each line of text on the clipboard
+
+import pyperclip
+text = pyperclip.paste()
+
+# TODO: Separate lines and add stars.
+
+# Separate lines and add stars
+lines = text.split('\n')
+
+for i in range(len(lines)):     # loop through all indexes in the lines list
+    lines[i] = '* ' + lines[i]  # add star to each string in "lines" list
+
+text = '\n'.join(lines)
+pyperclip.copy(text)
+
